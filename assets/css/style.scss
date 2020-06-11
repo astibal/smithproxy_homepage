@@ -2,3 +2,14 @@
 ---
 
 @import 'jekyll-theme-cayman';
+
+.page-header {
+    padding: 1rem 2rem;
+}
+
+.main-content {
+    max-width: 75rem;
+    padding: 2rem 1em;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
