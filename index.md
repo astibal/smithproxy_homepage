@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Smithproxy homepage
 
 ![](img/badger-status.png)  [![travis](https://travis-ci.org/astibal/smithproxy.svg?branch=master)](https://travis-ci.org/github/astibal/smithproxy)
