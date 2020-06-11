@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Homepage
+title: Smithproxy homepage
 ---
 
 ![](img/badger-love.png) [![become a patron](https://img.shields.io/badge/donate-patreon-FF338B)](https://www.patreon.com/bePatron?u=23520766)[![donate using liberapay](https://img.shields.io/badge/donate-liberapay-FFBE0B)](https://liberapay.com/astib/donate)  ![](img/badger-status.png) [![travis](https://travis-ci.org/astibal/smithproxy.svg?branch=master)](https://travis-ci.org/astibal/smithproxy)
