@@ -1,9 +1,10 @@
 # Smithproxy homepage
 
 Smithproxy is highly configurable, fast and transparent TCP/UDP/TLS (SSL) proxy.  
-Latest version: ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/astibal/smithproxy)  
-Smithproxy core: ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/astibal/smithproxy)  
-Socle library: ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/astibal/socle)  
+Latest version: [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/astibal/smithproxy)](https://github.com/astibal/smithproxy/releases)   
+
+Smithproxy core: [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/astibal/smithproxy)](https://github.com/astibal/smithproxy/)  
+Socle library: [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/astibal/socle)](https://github.com/astibal/socle/)  
   
 ... you can also support our effort and [become a patron](https://www.patreon.com/bePatron?u=23520766), or donate using [liberapay](https://liberapay.com/astib/donate).
 
@@ -12,8 +13,10 @@ Socle library: ![GitHub commit activity](https://img.shields.io/github/commit-ac
   * **Docker** - available as an image on docker hub
   * **Snap** - you can also install it as a confined snap!
   
-  ![travis](https://travis-ci.org/astibal/smithproxy.svg?branch=master)![docs](https://readthedocs.org/projects/smithproxy/badge/?version=latest&style=flat)![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/astibal/smithproxy)  
-  [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/smithproxy)
+  [![travis](https://travis-ci.org/astibal/smithproxy.svg?branch=master)](https://travis-ci.org/github/astibal/smithproxy)
+  [![docs](https://readthedocs.org/projects/smithproxy/badge/?version=latest&style=flat)](https://smithproxy.readthedocs.org)
+  [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/astibal/smithproxy)](https://hub.docker.com/repository/docker/astibal/smithproxy)
+  [![Snapstore](https://img.shields.io/badge/snap_build-passing-passing)](https://snapcraft.io/smithproxy)
 
 ### Core features:
   * intercept **routed** traffic, **locally-originated** traffic and **SOCKS** requests
