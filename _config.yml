@@ -1,1 +1,8 @@
+title: Smithproxy homepage
+email: astib@mag0.net
+description: "Welcome to smithproxy homepage!"
+baseurl: ""
+url: ""
+
+
 theme: jekyll-theme-cayman
