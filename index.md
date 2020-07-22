@@ -31,8 +31,8 @@ it can installed, compiled or deployed using docker or snap.
   * dumping plaintext version of traffic to files, exporting sslkeylog
   * TLS security checks (OCSP, OCSP stapling, automatic CRL download)
   * HTML replacement browser warnings
-  * STARTTLS support for most thinkable protocols
-  * Seamless HTTPS redirection to authentication portal
+  * STARTTLS support for most used protocols
+  * Seemless HTTPS redirection to authentication portal
 
 ## Other:
   * Local and LDAP user authentication using builtin web portal
