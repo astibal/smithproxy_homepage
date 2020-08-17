@@ -14,7 +14,7 @@ holidays are slowly reaching the inevitable end and I am returning to my updates
 The most of work has been done in **io2** branches of both, [smithproxy](https://github.com/astibal/smithproxy/tree/io2)  and [socle](https://github.com/astibal/socle/tree/io2).
 
 #### N:M workers
-A new, *N:M* worker architecture has been introduced, where one can have *N* acceptors competing for the same listening tproxy socket (ie. where all passing connections to tcp/443 are diverted), and *M* workers, all independently spawn to be notified by any from acceptors (which process and actually proxy the connection).  This should improve responsiveness and general performance while processing a new connections.
+A new *N:M* worker architecture has been introduced, where one can have *N* acceptors competing for the same listening tproxy socket (ie. where all passing connections to tcp/443 are diverted), and *M* workers, all independently spawn to be notified by any from acceptors (which process and actually proxy the connection).  This should improve responsiveness and general performance while processing a new connections.
 Also acceptor-worker notification mechanism has been changed to shared, full mesh socket-pair design - all acceptors can talk to all workers via their exclusive socket-pair.
 
 #### UDP code rewrite
