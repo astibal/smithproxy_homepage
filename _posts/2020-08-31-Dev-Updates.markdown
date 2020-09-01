@@ -61,7 +61,7 @@ We have 2 options:
 +----------+--------- ---
 ```
 ... by simply allocating some extra few bytes. But there are many issues with this design.
-What if the pointer was not requested from our mempool and it was by some program logic or error allocated by other means? Reading bytes outside pointer scope would lead may lead to segmentation fault or other under/overruns or bad reads based on previously incorrect buffer size calculation.
+What if the pointer was not requested from our mempool and it was by some program logic or error allocated by other means? Reading bytes outside pointer scope would probably lead to segmentation fault or other under/overruns or bad reads based on previously incorrect buffer size calculation.
 Worse - this can't be actually prevented  - there is no way we can know memory boundaries for this pointer, we can only *assume* it was allocated by mempool. 
 
 #### B) winning approach - allocating and **slicing parent memory chunk** to smaller, fixed-size ones, ie:
@@ -98,5 +98,5 @@ Feature is currently enabled only in debug mode, if `MEMPOOL_DEBUG` is enabled.
 # Conclusion
 Even though holidays were good time to relax, it was quite nice to have some spare time to think and materialize ideas into code. 
 
-Thanks for reading, till next time!
+Thanks for reading, till next time!  
   Ales, [Smithproxy](https://www.smithproxy.org "Your favorite project's homepage") dev
