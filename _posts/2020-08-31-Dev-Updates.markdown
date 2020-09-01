@@ -82,7 +82,7 @@ Not really, but we limited mepool memory locking to  a bare minimum. There is no
 But we still have a lock on a free chunk list (actually it's a pre-sized [vector](https://en.cppreference.com/w/cpp/container/vector "fast standard library container")). Adding a new element into the pre-sized vector is quite fast, but still there might be a need to remove this lock in the future. We can write special, lock-free [singly-linked list](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list), but it seems it's an overkill doing so at this time.   
 
 ### Bonus: memory corruption detection
-There is a new feature to fight (possible) memory corruption issues in [socle](https://github.com/astibal/socle/ "smithproxy foundation socket library"). It's check of bytes *before* the pointer and *after* the end of allocated bytes. These zones are pre-allocated with parent chunk and we call them canaries:
+There is a new feature to fight (possible) memory corruption issues in [socle](https://github.com/astibal/socle/ "smithproxy foundation socket library"). It's check of specific content *before* the allocated data and *after* the end of them. These zones are pre-allocated with parent chunk and we call them canaries:
 
 ```
     8B       64B        8B  
