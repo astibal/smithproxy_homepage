@@ -93,7 +93,7 @@ There is a new feature to fight (possible) memory corruption issues in [socle](h
 ```
 There is *front*, and *rear* canary. Both are checked when the memory is being released back to pool. If they didn't match predefined content, we know something must have overwritten them and we [throw an error](https://en.wikipedia.org/w/index.php?title=Throw_command&redirect=no "... making the program to handle some exceptional condition").  
 This adds of course some extra CPU cycles, the penalty is noticeable (on idle in few percents on modern processors).   But it protects program to underrun or overrun buffer, assuring stronger confidence on how data are handled by [socle](https://github.com/astibal/socle/ "smithproxy foundation socket library"). 
-Feature is currently enabled only in debug mode, if `MEMPOOL_DEBUG` is enabled.
+Feature is currently enabled only in debug mode, if `MEMPOOL_DEBUG` is defined in the source code.
 
 # Conclusion
 Even though holidays were good time to relax, it was quite nice to have some spare time to think and materialize ideas into code. 
