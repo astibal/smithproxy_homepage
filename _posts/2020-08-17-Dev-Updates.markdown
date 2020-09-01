@@ -6,7 +6,7 @@ categories: updates
 ---
 
 
-Hi all, 
+Hi all,  
 holidays are slowly reaching the inevitable end and I am returning to my updates for you. There are not many news to share, due to my holiday out of the reach, on really bad internet and too many distractions around. Luckily ;-)
 
 ## Smithproxy - io2 branch

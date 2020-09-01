@@ -1,20 +1,35 @@
-  Hi all,
-welcome back at smithproxy development update!
+---
+layout: default
+title: Smithproxy updates - Aug/31
+date: '2020-08-31 23:59:00 +0200'
+categories: updates
+---
 
-# Smithproxy
-There is one interesting change in socle  [io2 branch](https://github.com/astibal/socle/tree/io2/ "currently in-development branch focused on IO improvements"): memory management improvements. You might say why memory features are touched in branch focused on I/O?
+Hi all,
+welcome back at [**smithproxy**](https://www.smithproxy.org "Your favorite project's homepage") irregular development update!
+
+# [Smithproxy](https://www.smithproxy.org "Your favorite project's homepage")
+There is one interesting change in [socle](https://github.com/astibal/socle/ "smithproxy foundation socket library")  [io2 branch](https://github.com/astibal/socle/tree/io2/ "currently in-development branch focused on IO improvements"): memory management improvements. You might say why memory features are touched in branch focused on I/O? Because better I/O deserves faster memory allocation! :)
 
 ## [mempool](https://github.com/astibal/socle/tree/master/common/mempool "home-brew memory management using pools of pre-allocated memory chunks") improvements
-In [master branch](https://github.com/astibal/smithproxy/tree/master/) code, memory buffers were pre-allocated, added per-size to their lists, assigned and then released back when needed. 
-This principle was used in speed-critical parts of socle, and also hooked into OpenSSL library API - whenever crypto took place, it was using these pre-allocated memory chunks.
-This worked quite well, it was preventing [ `malloc()`]("https://man7.org/linux/man-pages/man3/malloc.3.html" "standard library memory allocation function") spamming, but .. 
+In [master branch](https://github.com/astibal/smithproxy/tree/master/) code, memory buffers were separately pre-allocated, added per-size to their lists, assigned and then released back when needed. 
+Pool memory allocator is used in speed-critical parts of [socle](https://github.com/astibal/socle/ "smithproxy foundation socket library"), and also hooked into [OpenSSL library API](https://www.openssl.org/docs/man1.1.1/man3/) - whenever crypto took place, it was using these pre-allocated memory chunks.
+This worked quite well, it was preventing [ `malloc()`]("https://man7.org/linux/man-pages/man3/malloc.3.html" "standard library memory allocation function") spamming, but ... 
 
 ### On design flaws
 
 > **There was a flaw in it**: when pointer was being released, we didn't know the size of allocated memory it points to. 
 
-Socle and internal code was changed to specify the size, but the rest of the issue remained:  external libraries made to use mempool were not aware of our custom memory management. 
-Standard memory releasing functions release pointer only. For example, see the code registering custom mempool allocator:
+[Socle](https://github.com/astibal/socle/ "smithproxy foundation socket library") and internal code was changed to specify the buffer capacity on release, ie:
+```C++
+// create mem_chunk to release my buffer
+mem_chunk_t to_release = mem_chunk(my_data_, my_data_capacity_);
+
+// access pool and release it!
+memPool::pool().release(to_release);
+```
+but the rest of the issue remained:  external libraries made to use mempool were not aware of our custom memory management. 
+Standard memory releasing functions release pointer only. For example, see the code registering custom mempool allocator via [`CRYPTO_set_mem_functions`](https://www.openssl.org/docs/man1.1.1/man3/CRYPTO_set_mem_functions.html):
 
 `mempool.hpp:`
 ```C
@@ -67,7 +82,7 @@ Not really, but we limited mepool memory locking to  a bare minimum. There is no
 But we still have a lock on a free chunk list (actually it's a pre-sized [vector](https://en.cppreference.com/w/cpp/container/vector "fast standard library container")). Adding a new element into the pre-sized vector is quite fast, but still there might be a need to remove this lock in the future. We can write special, lock-free [singly-linked list](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list), but it seems it's an overkill doing so at this time.   
 
 ### Bonus: memory corruption detection
-There is a new feature to fight (possible) memory corruption issues in socle. It's check of bytes *before* the pointer and *after* the end of allocated bytes. These zones are pre-allocated with parent chunk and we call them canaries:
+There is a new feature to fight (possible) memory corruption issues in [socle](https://github.com/astibal/socle/ "smithproxy foundation socket library"). It's check of bytes *before* the pointer and *after* the end of allocated bytes. These zones are pre-allocated with parent chunk and we call them canaries:
 
 ```
     8B       64B        8B  
@@ -77,5 +92,11 @@ There is a new feature to fight (possible) memory corruption issues in socle. It
          ^---                       ^---      ... pointers given to requestor 
 ```
 There is *front*, and *rear* canary. Both are checked when the memory is being released back to pool. If they didn't match predefined content, we know something must have overwritten them and we [throw an error](https://en.wikipedia.org/w/index.php?title=Throw_command&redirect=no "... making the program to handle some exceptional condition").  
-This adds of course some extra CPU cycles, the penalty is noticeable (on idle in few percents on modern processors).   But it protects program to underrun or overrun buffer, assuring stronger confidence on how data are handled by socle. 
+This adds of course some extra CPU cycles, the penalty is noticeable (on idle in few percents on modern processors).   But it protects program to underrun or overrun buffer, assuring stronger confidence on how data are handled by [socle](https://github.com/astibal/socle/ "smithproxy foundation socket library"). 
 Feature is currently enabled only in debug mode, if `MEMPOOL_DEBUG` is enabled.
+
+# Conclusion
+Even though holidays were good time to relax, it was quite nice to have some spare time to think and materialize ideas into code. 
+
+Thanks for reading, till next time!
+  Ales, [Smithproxy](https://www.smithproxy.org "Your favorite project's homepage") dev
