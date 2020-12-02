@@ -12,27 +12,29 @@ title: Smithproxy homepage
 
 **Smithproxy** is highly configurable, fast and transparent TCP/UDP/TLS (SSL) proxy written in C++17.  
 It uses our C++17 socket proxying library called [*socle*](https://github.com/astibal/socle). Yes, we love C++!
-
-> Check [documentation](https://smithproxy.readthedocs.org) for information about scenarios and how
-it can installed, compiled or deployed using docker or snap.
+> Read fresh [**Release Notes**](https://www.mag0.net/out/smithproxy/0.9/Release_Notes.md) to stay tuned!
+> To replay or script smithproxy or even pcap captures, check out please our sister project [pplay](https://pypi.org/project/pplay/).
 
 ## Availability:
   * **Linux** - can be installed as a service (distro packages, or easily compiled from sources)
+    Download Linux .deb  packages from: https://www.mag0.net/out/smithproxy/0.9/  
   * **Docker** - available as an image on docker hub
+    See our docker hub page: https://hub.docker.com/r/astibal/smithproxy
   * **Snap** - you can also install it as a confined snap!
+    Visit snap store here: https://snapcraft.io/smithproxy
 
 ## Core features:
-  * intercept **routed** traffic, **locally-originated** traffic and **SOCKS** requests
-  * Policy based traffic matching similar to modern firewalls
-  * Per-policy applicable *content*, *dns*, *tls*, *detection* and *authentication* profiles
-  * Insightful CLI with configuration control
+  * intercept **routed** traffic, **locally-originated** traffic and **SOCKS** proxy requests
+  * configure policy based traffic matching similar to modern firewalls
+  * utilize per-policy applicable *content*, *dns*, *tls*, *detection* and *authentication* profiles
+  * enjoy insightful CLI with configuration control
 
 ## TLS features:
   * dumping plaintext version of traffic to files, exporting sslkeylog
   * TLS security checks (OCSP, OCSP stapling, automatic CRL download)
   * HTML replacement browser warnings
   * STARTTLS support for most used protocols
-  * Seemless HTTPS redirection to authentication portal
+  * Seamless HTTPS redirection to authentication portal
 
 ## Other:
   * Local and LDAP user authentication using builtin web portal
@@ -47,3 +49,8 @@ it can installed, compiled or deployed using docker or snap.
   * auto-detect inspection interface(s) based on system routing information
   * check [pplay tool](https://pypi.org/project/pplay/): replays captures
     over the network with many cool features  
+
+# Support and contacts
+  * Discord server: https://discord.gg/vf4Qwwt  
+  * email support: `<support@smithproxy.org>`  
+  * Documentation: https://smithproxy.readthedocs.org
