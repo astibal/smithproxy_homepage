@@ -36,6 +36,7 @@ It uses our C++17 socket proxying library called [*socle*](https://github.com/as
 ## TLS features:
   * dumping plaintext version of traffic to files, exporting sslkeylog
   * TLS security checks (OCSP, OCSP stapling, automatic CRL download)
+  * Certificate Transparency checks for outbound connections
   * HTML replacement browser warnings
   * STARTTLS support for most used protocols
   * Seamless HTTPS redirection to authentication portal
