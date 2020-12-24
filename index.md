@@ -23,9 +23,11 @@ It uses our C++17 socket proxying library called [*socle*](https://github.com/as
     /smithproxy/0.9/)  
     * Download and compile directly from source (known to work: Debian, Ubuntu, Alpine, Fedora, Kali)  
   * **Docker** - available as an image on docker hub  
-    See our docker hub page: [https://hub.docker.com/r/astibal/smithproxy](https://hub.docker.com/r/astibal/smithproxy)
+    * See our docker hub page: [https://hub.docker.com/r/astibal/smithproxy](https://hub.docker.com/r/astibal
+    /smithproxy)
+    * ![](https://img.shields.io/docker/pulls/astibal/smithproxy)
   * **Snap** - you can also install it as a confined snap!  
-    Visit snap store here: [https://snapcraft.io/smithproxy](https://snapcraft.io/smithproxy)  
+    * Visit snap store here: [https://snapcraft.io/smithproxy](https://snapcraft.io/smithproxy)  
 
 ## Core features:
   * intercept **routed** traffic, **locally-originated** traffic and **SOCKS** proxy requests
