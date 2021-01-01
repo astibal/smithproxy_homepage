@@ -12,13 +12,13 @@ title: Smithproxy homepage
 
 **Smithproxy** is highly configurable, fast and transparent TCP/UDP/TLS (SSL) proxy written in C++17.  
 It uses our C++17 socket proxying library called [*socle*](https://github.com/astibal/socle). Yes, we love C++!
-> Read fresh [**Release Notes**](https://smithproxy.org/out/0.9/Release_Notes.md) to stay tuned!  
+> Read fresh [**Release Notes**](https://download.smithproxy.org/0.9/Release_Notes.md) to stay tuned!  
 
 > To replay or script smithproxy or even pcap captures, check out please our sister project [pplay](https://pypi.org/project/pplay/).
 
 ## Availability:
   * **Linux** - can be installed as a service (distro packages, or easily compiled from sources)  
-    * Download Linux .deb (*armv8*, *amd64*) packages from: [https://smithproxy.org/out/0.9/](https://smithproxy.org/out/0.9/)  
+    * Download Linux .deb (*armv8*, *amd64*) packages from: [https://download.smithproxy.org/0.9/](https://download.smithproxy.org/0.9/)  
     * Download and compile directly from source (known to work: Debian, Ubuntu, Alpine, Fedora, Kali)  
   * **Docker** - available as an image on docker hub  
     * See our docker hub page: [https://hub.docker.com/r/astibal/smithproxy](https://hub.docker.com/r/astibal/smithproxy)
