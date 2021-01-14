@@ -3,13 +3,9 @@
   <head>
 
     {% if site.google_analytics %}
-      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-      </script>
+      <!-- Cloudflare Web Analytics -->
+      <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9f5f5350c22b4b08bfa415838cf789a6"}'></script>
+      <!-- End Cloudflare Web Analytics -->      
     {% endif %}
     <meta charset="UTF-8">
 
