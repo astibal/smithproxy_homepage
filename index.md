@@ -8,7 +8,7 @@ title: Smithproxy homepage
   [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/astibal/smithproxy)](https://hub.docker.com/repository/docker/astibal/smithproxy)[![Snapstore](https://img.shields.io/badge/snap_build-passing-passing)](https://snapcraft.io/smithproxy)  
 ![](img/badger-versions.png) [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/astibal/smithproxy)](https://github.com/astibal/smithproxy/releases)[![Core commit activity](https://img.shields.io/github/commit-activity/m/astibal/smithproxy)](https://github.com/astibal/smithproxy/)[![Lib commit activity](https://img.shields.io/github/commit-activity/m/astibal/socle)](https://github.com/astibal/socle/)[![Docs commit activity](https://img.shields.io/github/commit-activity/m/astibal/smithproxy_docs)](https://github.com/astibal/smithproxy_docs/)   
 
-
+[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/astibal/smithproxy.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/astibal/smithproxy/context:cpp)
 
 **Smithproxy** is highly configurable, fast and transparent TCP/UDP/TLS (SSL) proxy written in C++17.  
 It uses our C++17 socket proxying library called [*socle*](https://github.com/astibal/socle).
@@ -33,7 +33,7 @@ It uses our C++17 socket proxying library called [*socle*](https://github.com/as
   * enjoy insightful CLI with configuration control
 
 ## TLS features:
-  * dumping traffic plaintext into pcapng or text files, exporting sslkeylog
+  * dumping traffic plaintext into PCAP(ng) or text files, exporting sslkeylog
   * TLS security checks (OCSP, OCSP stapling, automatic CRL download)
   * Certificate Transparency checks for outbound connections
   * HTML replacement browser warnings
