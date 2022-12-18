@@ -23,7 +23,7 @@ It uses our C++17 socket proxying library called [*socle*](https://github.com/as
   * **Docker** - available as an image on docker hub  
     * See our docker hub page: [https://hub.docker.com/r/astibal/smithproxy](https://hub.docker.com/r/astibal/smithproxy)
     * ![](https://img.shields.io/docker/pulls/astibal/smithproxy)
-  * **Snap** - install smithproxy service as a confined snap (with some limitations)!  
+  * **Snap** - install smithproxy service as a confined snap  
     * Visit snap store here: [https://snapcraft.io/smithproxy](https://snapcraft.io/smithproxy)  
 
 ## Core features:
@@ -31,21 +31,25 @@ It uses our C++17 socket proxying library called [*socle*](https://github.com/as
   * configure policy based traffic matching similar to modern firewalls
   * utilize per-policy applicable *content*, *dns*, *tls*, *detection* and *authentication* profiles
   * re-route traffic (DNAT) and load-balance it, stickiness based on source-IP, L3 or L4 header data
-  * enjoy insightful CLI with configuration control
-  * export intercepted traffic to rotated pcap files, or emitting it to remote workstation in GRE 
+  * insightful CLI with configuration control
+  * HTTP API to control configuration options ( -- new in `0.9.31`)
+  * export intercepted traffic to rotated pcap files, or emitting it to remote workstation in GRE
+  * limited UDP SOCKS5 support ( -- new in `0.9.31`)
+
 
 ## TLS features:
   * TLS security checks (OCSP, OCSP stapling, automatic CRL download)
   * Certificate Transparency checks for outbound connections
   * HTML replacement browser warnings
   * STARTTLS support for most starttls capable protocols, including HTTP proxy CONNECT
-  * Seamless HTTPS redirection to authentication portal
+  * Seamless HTTPS redirection to authentication portal (if installed)
   * Exporting sslkeylog
+  * KTLS support with OpenSSL 3.x.x. ( -- new in `0.9.31`)
 
 ## Other:
   * Local and LDAP user authentication using builtin web portal (using complementary package)
   * SOCKS4/SOCKS5 explicit proxy with DNS hostname support
-  * Engines: limited HTTP1 and HTTP2 support* 
+  * Engines: limited HTTP1 and HTTP2 support
   * DNS inspection allows FQDN policy objects, including DoH
   * Policies based on FQDN and 2nd level DNS domain
   * both IPv4 and IPv6 are supported
