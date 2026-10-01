@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Smithproxy</title>
+  <desc id="desc">A tilted inspection axis passing through a rotating sphere</desc>
+  <path d="M40 4 24 60" fill="none" stroke="#eef7f2" stroke-width="3"/>
+  <circle cx="32" cy="32" r="12" fill="#07110f" stroke="#83f28f" stroke-width="3.4"/>
+  <path d="m15 27 7 2m20 6 7 2" fill="none" stroke="#83f28f" stroke-width="2.6"/>
+</svg>
