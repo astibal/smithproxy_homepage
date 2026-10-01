@@ -1,44 +1,30 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
   <head>
-
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9f5f5350c22b4b08bfa415838cf789a6"}'></script>
-    <!-- End Cloudflare Web Analytics -->    
-    <meta charset="UTF-8">
-
-{% seo %}
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#07110f">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"9f5f5350c22b4b08bfa415838cf789a6"}'></script>
   </head>
   <body>
-    <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-
-      <a href="https://smithproxy.org/" class="btn"><strong>^</strong></a>
-      <a href="https://github.com/astibal/smithproxy" class="btn">View project on GitHub</a>
-      <a href="https://www.youtube.com/channel/UCb7BciVQp2pdQw9ndueTlvA" class="btn">Video tutorials</a>
-      <a href="https://smithproxy.readthedocs.org" class="btn">View documentation</a>
-      <a href="https://www.smithproxy.org/updates/2021/01/27/Dev-Updates.html" class="btn">Dev diary</a>
-      <a href="https://download.smithproxy.org/" class="btn"><strong>v</strong></a>
-
-      {% if site.show_downloads %}
-        <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
-        <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
-      {% endif %}
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Smithproxy home"><span class="brand-mark">S<span>X</span></span><span>smithproxy<small>traffic inspection proxy</small></span></a>
+      <nav aria-label="Main navigation"><a href="#capabilities">Capabilities</a><a href="#start">Get started</a><a href="https://smithproxy.readthedocs.io/en/latest/">Docs</a><a class="nav-github" href="https://github.com/astibal/smithproxy" aria-label="Smithproxy on GitHub">GitHub ↗</a></nav>
     </header>
-    <main id="content" class="main-content" role="main">
-      {{ content }}
-
-      <footer class="site-footer">
-        {% if site.github.is_project_page %}
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-        {% endif %}
-        <span class="site-footer-credits">This page is hosted on <a href="https://pages.github.com">GitHub Pages</a>.</span>
-      </footer>
-    </main>
+    <main id="content">{{ content }}</main>
+    <footer class="site-footer">
+      <div class="brand footer-brand"><span class="brand-mark">S<span>X</span></span><span>smithproxy<small>Open-source traffic inspection for Linux.</small></span></div>
+      <div class="footer-links"><a href="https://github.com/astibal/smithproxy">Source</a><a href="https://smithproxy.readthedocs.io/en/latest/">Documentation</a><a href="https://github.com/astibal/smithproxy/issues">Issues</a><a href="mailto:support@smithproxy.org">support@smithproxy.org</a></div>
+      <p>GPL-3.0 · Built for people who need to see the traffic, not just count it.</p>
+    </footer>
   </body>
 </html>

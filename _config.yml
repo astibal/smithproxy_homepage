@@ -1,8 +1,8 @@
-title: Smithproxy homepage
+title: Smithproxy
 email: astib@mag0.net
-description: ""
+description: "Open-source TCP, UDP and TLS traffic inspection proxy for Linux."
 baseurl: ""
-url: ""
+url: "https://www.smithproxy.org"
 
 
-theme: jekyll-theme-cayman
+lang: en
